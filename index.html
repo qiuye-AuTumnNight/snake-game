@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#070b16">
+<meta name="description" content="手机可玩的霓虹风格贪吃蛇：滑动屏幕或方向键控制，支持离线游玩与添加到主屏幕。">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="贪吃蛇">
+<title>霓虹贪吃蛇</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="hud">
+    <div class="stat">
+      <span>得分</span>
+      <strong id="score">0</strong>
+    </div>
+    <div class="stat">
+      <span>最高</span>
+      <strong id="best">0</strong>
+    </div>
+    <button type="button" class="icon-btn" id="btnSound" aria-label="音效开关">🔊</button>
+    <button type="button" class="icon-btn" id="btnPause" aria-label="暂停或继续">⏸</button>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="board-wrap" id="boardWrap">
+      <canvas id="board" width="400" height="400"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay__card">
+          <h1 class="overlay__title" id="ovTitle">霓虹贪吃蛇</h1>
+          <p class="overlay__text" id="ovText"></p>
+          <button type="button" class="btn" id="ovBtn">开始游戏</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="controls">
+    <div class="dpad" role="group" aria-label="方向控制">
+      <button type="button" class="dpad__btn dpad__btn--up" data-dir="up" aria-label="上">▲</button>
+      <button type="button" class="dpad__btn dpad__btn--left" data-dir="left" aria-label="左">◀</button>
+      <button type="button" class="dpad__btn dpad__btn--down" data-dir="down" aria-label="下">▼</button>
+      <button type="button" class="dpad__btn dpad__btn--right" data-dir="right" aria-label="右">▶</button>
+    </div>
+  </footer>
+</div>
+<script src="./game.js"></script>
+</body>
+</html>
