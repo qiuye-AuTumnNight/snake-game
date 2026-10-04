@@ -14,7 +14,9 @@ const ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE)
-      .then((cache) => cache.addAll(ASSETS))
+      // 逐个添加而不是 cache.addAll：addAll 是原子的，任何一个资源失败都会让
+      // 整个离线缓存为空，手机弱网下等于「离线可用」静默失效
+      .then((cache) => Promise.allSettled(ASSETS.map((url) => cache.add(url))))
       .then(() => self.skipWaiting())
       .catch(() => self.skipWaiting())
   );
