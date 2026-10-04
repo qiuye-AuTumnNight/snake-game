@@ -7,6 +7,7 @@
 **在线试玩：<https://qiuye-autumnnight.github.io/snake-game/>**
 
 > 手机上打开上面这个链接即可开玩；在浏览器菜单里选「添加到主屏幕」，就会像小程序一样全屏启动，并且断网也能玩。
+> 想玩别的？回到 [🎮 游戏盒](https://qiuye-autumnnight.github.io/)。
 
 ## 玩法
 
